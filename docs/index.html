@@ -1,0 +1,782 @@
+<div class="content">
+
+    <style>
+        html, body {
+            background-image: url('https://cdn.discordapp.com/attachments/563384919473258526/569987811160358922/new_Sapoto_Background.png') !important;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white !important;
+        }
+        p {
+            font-weight: bold;
+        }
+        .shapes-background {
+            display: none;
+        }
+        .bot-name {
+            color: white;
+            font: 600 18px "Montserrat", sans-serif;
+        }
+        .bot-description {
+            font: 400 14px "Montserrat", sans-serif;
+            color: #ffffff;
+            line-height: 1.36;
+            margin-top: 10px;
+        }
+        .lib a {
+            color: white !important;
+            transition: all 0.8s;
+        }
+        .lib a:hover {
+            color: white !important;
+            transition: all 0.8s;
+            box-shadow: 0px 1px 3px white;
+        }
+        #libclick:before {
+            content: "Coded with ";
+            color: white;
+            transition: all 0.8s;
+        }
+        #libclick:hover {
+            content: "Coded with ";
+            color: white !important;
+            box-shadow: 0px 1px 3px white;
+        }
+        #menu {
+            background-color: #ffffff3b !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 999;
+            transition: all 0.2s ease-in-out;
+        }
+        #menu:hover {
+            background-color: #ffffff3b !important;
+            margin: auto;
+            z-index: 999;
+            transition: all 0.5s;
+            font-weight: 450;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0px 1px 3px white;
+        }
+        #menu .menu ul li a:hover, #menu .menu ul li span:hover {
+            color: none !important;
+            background: #ffffff3b !important;
+            border-radius: 6px !important;
+            transition: all 0.2s ease-in-out;
+        }
+        #menu ul li a:not(.btn):hover {
+            color: white !important;
+            background-color: none !important;
+            border-radius: 6px !important;
+            transition: all 0.2s ease-in-out;
+        }
+        .atag {
+            background-color: #ffffff3b;
+            color: white;
+            display: inline-block;
+            height: 26px;
+            line-height: 26px;
+            padding: 0 10px 0 23px;
+            position: relative;
+            margin-bottom: 3px;
+            text-decoration: none;
+            -webkit-transition: color 0.2s;
+            margin-right: 14px !important;
+            font-weight: 450;
+            top: 0;
+            transition: all 0.2s ease-in-out;
+        }
+        .atag:hover {
+            color: white;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-weight: 450;
+            transition: all 0.2s ease-in-out;
+            background-color: #ffffff3b;
+            box-shadow: 0px 1px 3px white;
+        }
+        .atag:after {
+            border-bottom: 13px solid transparent;
+            border-left: 10px solid white;
+            border-top: 13px solid transparent;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            transition: all 0.2s ease-in-out;
+        }
+        .atag:hover:after {
+            background: transparent !important;
+            border-bottom: 13px solid transparent;
+            border-left: 10px solid white;
+            border-top: 13px solid transparent;
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 0;
+            transition: all 0.2s ease-in-out;
+        }
+        .btns {
+            padding-top: 7px;
+            padding-left: 75px;
+        }
+        .bot-tags-title {
+            margin-bottom: 5px;
+            font-weight: bold;
+            padding-left: 83px;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: white;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #7289DA !important;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: white;
+        }
+        .btn-orange {
+            background-color: #ffffff3b !important;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-orange:hover {
+            color: white !important;
+            transition: all 0.3s ease-in-out;
+            filter: none !important;
+            box-shadow: 0px 1px 3px white;
+            background-color: #ffffff3b !important;
+        }
+        .titleandvote {
+            font: 600 25px "Montserrat", sans-serif;
+            color: white !important;
+            padding-right: 29px;
+        }
+        .titleandvote:hover {
+            font: 600 25px "Montserrat", sans-serif;
+            color: white !important;
+            padding-right: 29px;
+        }
+        .votebutton {
+            color: white !important;
+        }
+        .columns .bot-img {
+            box-shadow: 1px 1px 1px 1px transparent !important;
+            animation: float 6s ease-in-out infinite, pulse 2s infinite;
+            border-radius: 50%;
+        }
+        .website {
+            animation: pulse
+        }
+        @-webkit-keyframes pulse {
+            0% {
+                -webkit-box-shadow: 0 0 0 0 rgb(255, 255, 255);
+            }
+            70% {
+                -webkit-box-shadow: 0 0 0 20px white;
+            }
+            100% {
+                -webkit-box-shadow: 0 0 0 0 rgba(25, 118, 210, 0);
+            }
+        }
+        @keyframes pulse {
+            0% {
+                -moz-box-shadow: 0 0 0 0 0 0 0 0 rgb(255, 255, 255);
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+            }
+            70% {
+                -moz-box-shadow: 0 0 0 20px rgba(25, 118, 210, 0);
+                box-shadow: 0 0 0 20px rgba(25, 118, 210, 0);
+            }
+            100% {
+                -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+        @keyframes float {
+            0% {
+                box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+                transform: translatey(0px);
+            }
+            50% {
+                box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+                transform: translatey(-20px);
+            }
+            100% {
+                box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+                transform: translatey(0px);
+            }
+        }
+        .website {
+            animation: pulse 2s infinite;
+            border-radius: 10px;
+        }
+        .website {
+            animation: pulse 2s infinite;
+            border-radius: 10px;
+        }
+        .bot-img>img {
+            border: 5px solid white;
+            background-color: transparent;
+        }
+        .bot-img img {
+            -webkit-animation: mover 1.5s infinite alternate;
+            animation: mover 1.5s infinite alternate;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            border-radius: 50%
+        }
+        code {
+            background-color: #ffffff3b;
+            color: #ffffff;
+            font-size: 0.875em;
+            font-weight: normal;
+            padding: 0.25em 0.5em 0.25em;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+        }
+        code:hover {
+            color: #ffffff;
+            font-size: 0.875em;
+            font-weight: normal;
+            padding: 0.25em 0.5em 0.25em;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+            background-color: #ffffff3b !important;
+        }
+        .owners a {
+            color: white;
+        }
+        #createdby b {
+            background-color: #ffffff3b;
+            display: inline-block;
+            height: 25px;
+            border-radius: 30px;
+            vertical-align: middle;
+            transform: translate(0px, -2px);
+            margin-left: 3px;
+            text-decoration: none !important;
+            transition: all 0.2s ease-in-out;
+        }
+        #createdby b:hover {
+            background-color: #ffffff3b;
+            color: white;
+            display: inline-block;
+            height: 25px;
+            border-radius: 30px;
+            vertical-align: middle;
+            transform: translate(0px, -2px);
+            margin-left: 3px;
+            text-decoration: none !important;
+            transition: all 0.2s ease-in-out;
+            padding: 0px !important;
+            box-shadow: 0px 1px 3px white;
+        }
+        #createdby {
+            color: white !important;
+        }
+        /* Removed White Line */
+        #bot-details-page #details .container {
+            border-bottom: 1px solid #ccd6f800;
+            border-top: 1px solid #00000000;
+            padding: 40px 0;
+        }
+
+
+        #edit:hover, #support:hover, #delete:hover, #report:hover, #github:hover, #websitelink:hover {
+            background-color: #ffffff3b !important;
+            border-radius: 5px !important;
+            color: white !important;
+            transition: all 0.2s ease-in-out !important;
+            box-shadow: 0px 1px 3px white;
+        }
+
+        #edit, #delete, #support, #github, #report, #websitelink{
+            background-color: #ffffff3b !important;
+            border-radius: 5px !important;
+            color: white !important;
+        }
+
+        .status.green {
+            color: white !important;
+        }
+        .status.green::before {
+            background-color: #ffffff!important;
+        }
+
+        #bot-details-page .btn-like:after {
+            background-color: none;
+            color: white;
+            padding-right: 5px;
+            content: " VOTES";
+            transition: all 0.8s;
+            white-space: pre;
+            border-radius: 5px;
+        }
+        .btn-like {
+            background-color: #ffffff3b !important;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.8s;
+        }
+        .btn-like:hover {
+            background-color: #ffffff3b !important;
+            box-shadow: 0px 1px 3px white;
+            color: white;
+            padding-right: 5px;
+            transition: all 0.8s;
+            border-radius: 5px;
+        }
+        #upvotebutton img {
+            display: none;
+        }
+        .longdescription .content {
+            background-color: #9CABE5;
+            min-height: 50px;
+            position: relative;
+            padding: 20px;
+            font: 600 16px "Montserrat", sans-serif;
+            text-align: left !important;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            color: white !important;
+        }
+        .longdescription .content:hover {
+            background-color: #9CABE5;
+            min-height: 50px;
+            position: relative;
+            padding: 20px;
+            font: 600 16px "Montserrat", sans-serif;
+            text-align: left !important;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            color: white !important;
+        }
+        .blog_card {
+            display: inline-block;
+            margin: 10px;
+            pointer-events: all;
+            background: #7289DA !important;
+            max-width: 350px;
+            max-height: 90px;
+            overflow: hidden;
+            border-radius: 7px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: 1px solid white;
+            animation-name: topFadeOut;
+            animation-duration: 3.5s;
+            color: white;
+            border-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .blog_card:hover {
+            background-color: #715cba00 !important;
+            color: white !important;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 1px 3px white;
+        }
+        .blog_card:after {
+            content: " " !important;
+            background-color: #715cba00 !important;
+            color: white !important;
+            transition: all 0.3s ease-in-out;
+        }
+        .blog_card:hover:after {
+            content: " " !important;
+            background-color: #715cba00 !important;
+            color: white !important;
+            transition: all 0.3s ease-in-out;
+        }
+        ::selection {
+            background-color: white !important;
+            color: white;
+        }
+        .content h1 {
+            color: white;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        td {
+            color: white;
+        }
+        tr {
+            background: #00000030;
+            border: 2px solid white;
+        }
+        hr {
+            background-color: white;
+            border: 3px solid white;
+        }
+        tr:hover {
+            background: #00000060 !important;
+        }
+        .btn-contain {
+            margin: 5% auto;
+            min-height: 100px;
+        }
+        .btn-shiny-contain {
+            max-width: 270px;
+            margin: 0 auto;
+        }
+        .btn-shiny {
+            font-family:sans-serif;
+            font-weight:bold;
+            text-align: center;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+            border: none;
+            padding: 20px;
+            display: block;
+            margin: 50px auto;
+            background: #7289DA;
+            position: relative;
+            border: 2px solid white;
+            transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            overflow: hidden;
+            color: white;
+            margin: -30px 10px;
+            transition: all 0.3s ease-in-out !important;
+            animation-name: topFadeOut;
+            animation-duration: 3.5s;
+        }
+        .btn-shiny .shiny-line {
+            background-color: white;
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            left: -185px;
+            May need to change this depending on length of buttontransform: rotateZ(45deg);
+            -webkit-transform: rotateZ(45deg);
+            -moz-transform: rotateZ(45deg);
+            -o-transform: rotateZ(45deg);
+            -ms-transform: rotateZ(45deg);
+        }
+        .btn-shiny:hover {
+            background: #7289DA;
+            border: 2px solid white;
+            color: white;
+            margin: -30px 5px;
+            transition: all 0.3s ease-in-out !important;
+        }
+        .btn-shiny:hover .shiny-line {
+            transition: all 0.4s ease;
+            -webkit-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -ms-transition: all 0.4s ease;
+            left: 200px;
+            May need to change this depending on length of button
+        }
+        .content h2 {
+            color: white;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bolder;
+            margin-bottom: -30px;
+        }
+        .content h3 {
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 24px;
+            max-width: 1220px;
+        }
+        #discord-img {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #discord-img:hover {
+            background-image: url("https://cdn.discordapp.com/attachments/400076272128229376/498189593628246027/unknown.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 500px;
+        }
+        .alert {
+            background-color: #7289DA;
+            color: white;
+            padding: 6px;
+            text-align: center;
+            font: 200 16px "Montserrat", sans-serif;
+            line-height: 25px;
+            vertical-align: middle;
+        }
+        .alert:hover {
+            background-color: #edd1bd4d;
+            color: white;
+            padding: 6px;
+            text-align: center;
+            font: 200 16px "Montserrat", sans-serif;
+            line-height: 25px;
+            vertical-align: middle;
+        }
+        .alert-cta {
+            border: 1px solid white;
+            padding: 2px;
+            border-radius: 3px;
+            transition: all 0.3s ease-in-out !important;
+            background-color: #edd1bd4d;
+        }
+        .alert-cta:hover {
+            border: 1px solid white;
+            padding: 2px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out !important;
+            background-color: #7289DA;
+            color: white;
+        }
+        .titleandvote {
+            display: flex;
+            align-items: center !important;
+        }
+        .titleandvote a {
+            padding-right: 5px !important;
+        }
+        .content a:hover {
+            color: white !important;
+        }
+        span.donate:hover {
+            cursor: pointer !important;
+        }
+
+    </style>
+    <script>
+        const donateButton = document.querySelector('span.donate');
+        const anchor = donateButton.parentElement;
+        anchor.setAttribute('href', 'https://www.patreon.com/sapoto')
+        donateButton.removeAttribute('title');
+    </script>
+
+    <h2><u>Sapoto</u></h2>
+    <h3>Sapoto is a feature rich, user friendly, and easy to configure Ticket bot. What makes Sapoto better than our competitors? Sapoto has all the core features and more... <b>FOR FREE</b>! What is there not to love? Invite Sapoto to your server today!</h3>
+    <section id="discord-img0">
+        <div class="btn-contain">
+            <div class="btn-shiny-contain">
+                <a target="_blank" onclick="trackCampaignWebClick('', 'description');" rel="nofollow" href="https://discordapp.com/oauth2/authorize?client_id=517228615042072576&permissions=8&scope=bot" class="btn-shiny">
+                    <div class="shiny-line"></div>&gt;
+                    <span>Invite Sapoto</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <h1>Ticket Commands</h1>
+    <hr>
+    <table style="width: 100%; border-color: none; margin-left: auto; margin-right: auto;" border="0" cellpadding="10">
+        <tbody>
+        <tr style="height: 25px; background: #00000080;">
+            <td style="width: 163.533px; height: 28px;">&nbsp;Command</td>
+            <td style="width: 351.467px; height: 23px;">&nbsp;Usage</td>
+            <td style="width: 82px; height: 23px;">&nbsp;Aliases</td>
+            <td style="width: 237px; height: 23px;">&nbsp;Example</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">add</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Gives the specified user permissions to view the ticket. This can only be ran in a ticket channel.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">a</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;add <user></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">close</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Closes the current ticket. This can only be ran in a ticket channel.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">c</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;close</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">new</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Creates a new ticket channel and gives permissions to the configured support role and the ticket creator to read and write.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">n</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;new [subject]</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">ticket</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;This pulls information on the ticket such as creator, when it was opened, how many messages were sent, etc.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">t</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;ticket <number> [--log]</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <h1>Configuration Commands</h1>
+    <hr>
+    <table style="width: 100%; border-color: none; margin-left: auto; margin-right: auto;" border="0" cellpadding="10">
+        <tbody>
+        <tr style="height: 25px; background: #00000080;">
+            <td style="width: 163.533px; height: 28px;">&nbsp;Command</td>
+            <td style="width: 351.467px; height: 23px;">&nbsp;Usage</td>
+            <td style="width: 82px; height: 23px;">&nbsp;Aliases</td>
+            <td style="width: 237px; height: 23px;">&nbsp;Example</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">blacklist</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Adds a user to the servers ticket blacklist.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">block</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;blacklist <user></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">config</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Lists the servers configuration</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">config-list</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;config</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">force-captcha</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;<strong>PREMIUM</strong> Force users to solve a captcha on their next ticket even if they've never made one before.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">fc</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;force-captcha <user></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">set-category</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Changes the server's ticket category.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">category</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;set-category <category></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">set-log</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Changes this guild's ticket log.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">log</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;set-log <channel></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">set-max</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Changes the maximum amount of tickets a user can have open at once.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">max</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;max <number></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">set-welcome</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;Changes this guild's welcome channel.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;welcome</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;welcome <channel></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">set-prefix</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;Changes the servers prefix. The prefix cannot have spaces and more than 8 characters.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;prefix</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;prefix <prefix></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">set-msg</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;<strong>PREMIUM</strong> Changes this guild's new ticket message.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;msg</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;set-msg <message></td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">set-support</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;Changes this guild's Support Team role.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;support</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;set-support <role> </td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">set-welcome-msg</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;Changes this guild's welcome message.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;welcome-msg</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;set-welcome-msg <message> <br> <ul>
+                <li><code>%user%</code> - user mention</li>
+                <li><code>%username%</code> - user's username</li>
+                <li><code>%tag%</code> - user's tag</li>
+                <li><code>%server</code> - server name</li>
+                <li><code>%server.size%</code> - server member count</li>
+                <li><code>%ticket_channel%</code> - all whitelisted channels joined on <code>or</code> <strong>PREMIUM</strong></li>
+            </ul>
+            </td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">toggle-captcha</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;<strong>PREMIUM</strong> Toggle is the user creating a ticket must solve a captcha to create a ticket.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;N/A</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;toggle-captcha</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">toggle-delete</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;<strong>PREMIUM</strong> Toggle if the new-ticket execution message is deleted or not. This can prevent other users from copying confidential data.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;N/A</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;toggle-delete</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">toggle-welcome</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;Toggle the new-member welcome message.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;N/A</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;toggle-welcome</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 22px;">&nbsp;<span style="color: white;">whitelist</span></td>
+            <td style="width: 351.467px; height: 22px;">&nbsp;Restricts users to making tickets in the whitelisted channels.</td>
+            <td style="width: 82px; height: 22px;"><span style="color: white;">&nbsp;wl</span></td>
+            <td style="width: 237px; height: 22px;">&nbsp;whitelist <channel></td>
+        </tr>
+        </tbody>
+    </table>
+    <h1>Utility Commands</h1>
+    <hr>
+    <table style="width: 100%; border-color: none; margin-left: auto; margin-right: auto;" border="0" cellpadding="10">
+        <tbody>
+        <tr style="height: 25px; background: #00000080;">
+            <td style="width: 163.533px; height: 28px;">&nbsp;Command</td>
+            <td style="width: 351.467px; height: 23px;">&nbsp;Usage</td>
+            <td style="width: 82px; height: 23px;">&nbsp;Aliases</td>
+            <td style="width: 237px; height: 23px;">&nbsp;Example</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">donate</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Responds with how to purchase premium benefits.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">N/A</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;premium</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">guild</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Gives information how to use utilize Sapoto.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">N/A</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;guide</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">help</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Displays all available commands or detailed info for a specific command.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">N/A</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;help [command]</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">invite</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Responds with a Bot invite and an invite to the Support server.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">N/A</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;invite</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">ping</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Checks the bot's ping to Discord.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">latency, test</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;ping</td>
+        </tr>
+        <tr style="height: 20px;">
+            <td style="width: 163.533px; height: 20px;">&nbsp;<span style="color: white;">stats</span></td>
+            <td style="width: 351.467px; height: 20px;">&nbsp;Responds with the bot's status & stats.</td>
+            <td style="width: 82px; height: 20px;">&nbsp;<span style="color: white;">status, uptime, info</span></td>
+            <td style="width: 237px; height: 20px;">&nbsp;stats</td>
+        </tr>
+        </tbody>
+    </table>
